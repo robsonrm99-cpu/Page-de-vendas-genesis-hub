@@ -22,6 +22,8 @@ import {
   Star
 } from 'lucide-react';
 
+const CHECKOUT_URL = "https://pay.kiwify.com.br/JshSk86";
+
 // --- Custom Hook for Smooth Scroll ---
 // Simplificado para evitar erros de Uncaught/SecurityError com pushState
 const useSmoothScroll = () => {
@@ -69,8 +71,9 @@ const Navbar: React.FC = () => {
         </div>
         
         <a 
-          href="#preco" 
-          onClick={scrollTo('preco')}
+          href={CHECKOUT_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-full font-bold text-sm transition-all shadow-lg shadow-blue-600/20 active:scale-95"
         >
           Garantir Acesso
@@ -148,8 +151,6 @@ const DashboardPreview: React.FC = () => (
 );
 
 const Hero: React.FC = () => {
-  const scrollTo = useSmoothScroll();
-  
   return (
     <section id="home" className="relative pt-40 pb-20 px-6 overflow-hidden min-h-screen flex flex-col items-center scroll-mt-24">
       <div className="absolute top-1/4 -left-40 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none"></div>
@@ -173,8 +174,9 @@ const Hero: React.FC = () => {
         
         <div className="flex flex-col items-center gap-8 mb-24">
           <a 
-            href="#preco" 
-            onClick={scrollTo('preco')}
+            href={CHECKOUT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white px-14 py-6 rounded-2xl font-black text-xl md:text-2xl transition-all flex items-center justify-center gap-4 shadow-2xl glow-blue transform hover:scale-105 active:scale-95 uppercase italic tracking-tight group"
           >
             Quero Gestão Inteligente Agora
@@ -225,7 +227,6 @@ const Problem: React.FC = () => (
 );
 
 const Solution: React.FC = () => {
-  const scrollTo = useSmoothScroll();
   return (
     <section id="solucao" className="py-32 px-6 relative scroll-mt-24">
       <div className="max-w-7xl mx-auto">
@@ -257,8 +258,9 @@ const Solution: React.FC = () => {
             </div>
 
             <a 
-              href="#preco" 
-              onClick={scrollTo('preco')}
+              href={CHECKOUT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 text-blue-500 font-black uppercase italic tracking-widest hover:text-blue-400 transition-colors group"
             >
               Garantir Licença Vitalícia <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
@@ -446,7 +448,6 @@ const Testimonials: React.FC = () => (
 );
 
 const Pricing: React.FC = () => {
-  const scrollTo = useSmoothScroll();
   return (
     <section id="preco" className="py-32 px-6 relative scroll-mt-24">
       <div className="absolute inset-0 bg-blue-600/5 -z-10"></div>
@@ -496,9 +497,14 @@ const Pricing: React.FC = () => {
                 ))}
               </div>
 
-              <button className="w-full bg-blue-600 hover:bg-blue-500 text-white px-8 py-7 rounded-[2rem] font-black text-2xl md:text-3xl transition-all shadow-2xl glow-blue transform hover:scale-105 active:scale-95 uppercase italic tracking-tight shadow-blue-600/30">
+              <a 
+                href={CHECKOUT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full bg-blue-600 hover:bg-blue-500 text-white px-8 py-7 rounded-[2rem] font-black text-2xl md:text-3xl transition-all shadow-2xl glow-blue transform hover:scale-105 active:scale-95 uppercase italic tracking-tight shadow-blue-600/30"
+              >
                 Garantir Licença Vitalícia
-              </button>
+              </a>
               
               <p className="text-gray-600 text-[10px] mt-10 font-black uppercase tracking-[0.3em] flex items-center justify-center gap-3">
                 <Clock className="w-4 h-4" /> Apenas 17 licenças restantes
@@ -576,7 +582,6 @@ const Authority: React.FC = () => (
 );
 
 const FinalCTA: React.FC = () => {
-  const scrollTo = useSmoothScroll();
   return (
     <section id="final-cta" className="py-40 px-6 relative overflow-hidden scroll-mt-24">
       <div className="absolute inset-0 bg-blue-600/[0.03] -z-10"></div>
@@ -590,8 +595,9 @@ const FinalCTA: React.FC = () => {
         
         <div className="flex flex-col items-center gap-10">
           <a 
-            href="#preco"
-            onClick={scrollTo('preco')}
+            href={CHECKOUT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white px-16 py-8 rounded-[2.5rem] font-black text-2xl md:text-4xl transition-all shadow-2xl glow-blue transform hover:scale-105 uppercase italic tracking-tight shadow-blue-600/40"
           >
             Garantir Licença Vitalícia
